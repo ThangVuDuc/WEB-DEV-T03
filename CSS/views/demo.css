@@ -1,0 +1,25 @@
+﻿.table-content {
+    height: 500px;
+    overflow: auto;
+}
+
+.main-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .main-table tbody tr:nth-child(even) {
+        background-color: #d0d0d0;
+    }
+
+    .main-table th {
+        border: 1px solid #000;
+    }
+
+    .main-table td {
+        border: 1px solid #000;
+    }
+
+.selected {
+    background-color: #00ff90 !important;
+}
