@@ -18,8 +18,32 @@
 
     .main-table td {
         border: 1px solid #000;
+        height: 32px;
     }
 
 .selected {
     background-color: #00ff90 !important;
 }
+
+.text-center{
+    text-align: center;
+}
+
+.text-right{
+    text-align: right;
+}
+
+.uncheck {
+    width: 30px;
+    background: url('/Contents/images/uncheck.png') center no-repeat;
+}
+
+.check {
+    width: 30px;
+    background: url('/Contents/images/check.png') center no-repeat;
+}
+
+.tick {
+    background-color: #00ff90 !important;
+}
+

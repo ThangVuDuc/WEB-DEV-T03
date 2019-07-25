@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    
+
 });
 
 class Ref extends Base {
@@ -14,7 +14,29 @@ class Ref extends Base {
             'jsObject': 123456,
             'name': 'Vũ Đức Thắng'
         }, this.RowOnClick);
-        $(document).on('click', 'button.delete', {'jsObject': this} ,this.ClickButton);
+        $(document).on('click', 'button.delete', { 'jsObject': this }, this.ClickButton);
+        $(document).on('click', 'td.icon-tick', this.TickRow);
+    }
+
+    /**
+     * Hàm thực hiện chọn từng hàng khi tick vào cột đầu tiên
+     * Người tạo VDThang
+     * Ngày tạo 25/07/2019
+     * @param {any} event
+     */
+
+    TickRow(event) {
+        var currCls = event.currentTarget.classList[1];
+        if (currCls === "uncheck") {
+            $(this).removeClass('uncheck');
+            $(this).addClass('check');
+            $(this).parent().addClass('tick');
+        } else {
+            $(this).removeClass('check');
+            $(this).addClass('uncheck');
+            $(this).parent().removeClass('tick');
+            $(this).parent().removeClass('selected');
+        }
     }
 
     /**
@@ -34,17 +56,28 @@ class Ref extends Base {
         $('button.delete').removeAttr('disabled');
     }
 
+
+    /**
+     * Hàm thực hiện xóa dữ liệu phiếu thu
+     * Người tạo: VDThang 
+     * Ngày tạo: 25/07/2019
+     * @param {any} event
+     */
+
     ClickButton(event) {
         var me = event.data['jsObject'];
-        var listRefno = [];
-        var refno = $('.selected .refno').text();
-        listRefno.push(refno);
-       
+        var listRefID = [];
+        var listRow = $('.tick,.selected');
+        $.each(listRow, function (index, item) {
+            var refid = $(item).data('recordid');
+            listRefID.push(refid);
+        });
+
         $.ajax({
             method: 'DELETE',
             url: '/refs',
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify(listRefno),
+            data: JSON.stringify(listRefID),
             success: function (res) {
                 me.loadData();
             },

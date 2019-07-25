@@ -24,103 +24,79 @@ namespace FresherTraining.Controllers
         /// <returns></returns>
         [Route("refs")]
         [HttpGet]
-        public IQueryable<Ref> GetRefs()
+        public IEnumerable<Ref> GetRefs()
         {
             return db.Refs;
         }
 
-        // GET: api/Refs/5
-        [ResponseType(typeof(Ref))]
-        public IHttpActionResult GetRef(Guid id)
+        /// <summary>
+        /// Hàm thực hiện thêm mới phiếu thu chi REF
+        /// Người tạo VDThang
+        /// Ngày tạo 25/07/2019
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns></returns>
+        [Route("refs")]
+        [HttpPost]
+        public int Post([FromBody] Ref refitem)
         {
-            Ref @ref = db.Refs.Find(id);
-            if (@ref == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(@ref);
-        }
-
-        // PUT: api/Refs/5
-        [ResponseType(typeof(void))]
-        public IHttpActionResult PutRef(Guid id, Ref @ref)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            if (id != @ref.RefID)
-            {
-                return BadRequest();
-            }
-
-            db.Entry(@ref).State = EntityState.Modified;
-
             try
             {
+                refitem.RefID = Guid.NewGuid();
+                db.Refs.Add(refitem);
                 db.SaveChanges();
+                return 1;
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!RefExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return 0;
             }
-
-            return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Refs
-        [ResponseType(typeof(Ref))]
-        public IHttpActionResult PostRef(Ref @ref)
+        /// <summary>
+        /// Hàm thực hiện sửa đổi phiếu thu chi REF
+        /// Người tạo VDThang
+        /// Ngày tạo 25/07/2019
+        /// </summary>
+        /// <param name="refitem"></param>
+        /// <returns></returns>
+        [Route("refs")]
+        [HttpPut]
+        public int Put([FromBody] Ref refitem)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            db.Refs.Add(@ref);
-
             try
             {
+                var refFind = db.Refs.Where(p => p.RefID == refitem.RefID).FirstOrDefault();
+                refFind.RefDate = refitem.RefDate;
+                refFind.RefType = refitem.RefType;
+                refFind.Total = refitem.Total;
+                refFind.ContactName = refitem.ContactName;
+                refFind.Reason = refitem.Reason;
                 db.SaveChanges();
+                return 1;
             }
-            catch (DbUpdateException)
+            catch (Exception ex)
             {
-                if (RefExists(@ref.RefID))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
+                return 0;
             }
-
-            return CreatedAtRoute("DefaultApi", new { id = @ref.RefID }, @ref);
         }
 
-        // DELETE: api/Refs/5
-        [ResponseType(typeof(Ref))]
-        public IHttpActionResult DeleteRef(Guid id)
+        /// <summary>
+        /// Hàm thực hiện xóa dữ liệu phiếu thu chi REF
+        /// Người tạo VDThang
+        /// Ngày tạo: 25/07/2019
+        /// </summary>
+        /// <param name="refids"></param>
+        [Route("refs")]
+        [HttpDelete]
+        public void DeleteMultiple([FromBody]List<Guid> refids)
         {
-            Ref @ref = db.Refs.Find(id);
-            if (@ref == null)
+            foreach (var refid in refids)
             {
-                return NotFound();
+                var refItem = db.Refs.Where(p => p.RefID == refid).FirstOrDefault();
+                db.Refs.Remove(refItem);
             }
-
-            db.Refs.Remove(@ref);
             db.SaveChanges();
-
-            return Ok(@ref);
         }
 
         protected override void Dispose(bool disposing)
