@@ -10,12 +10,100 @@ class Ref extends Base {
     }
 
     InitEvents() {
-        $('tbody').on('click', 'tr', {
+        $('.main-table tbody').on('click', 'tr', {
             'jsObject': 123456,
             'name': 'Vũ Đức Thắng'
         }, this.RowOnClick);
         $(document).on('click', 'button.delete', { 'jsObject': this }, this.ClickButton);
         $(document).on('click', 'td.icon-tick', this.TickRow);
+        $(document).on('click', 'button.add-new', this.OpenDialogAdd);
+        $(document).on('click', 'button.save', this.SaveRef.bind(this));
+        $(document).on('click', 'button.cancel', this.CloseDialogAdd);
+        $(document).on('click', 'button.edit', this.OpenDialogEdit);
+    }
+
+    /**
+     * Hàm thực hiện sửa phiếu thu lựa chọn
+     * Người tạo: VDThang
+     * Ngày tạo: 24/07/2019
+     * */
+    OpenDialogEdit() {
+        $("#dialog").dialog({
+            title: "Sửa phiếu thu",
+            width: 500,
+            height: 300
+        });
+        var listRow = $('input[property]');
+        $.each(listRow, function (index, item) {
+            var propertyName = item.getAttribute('property');
+            var value = $('.selected .{0}'.format(propertyName)).text();
+            $(item).val(value);
+        });
+        $('#mode').val("sửa");
+    }
+
+    /**
+     * Hàm thực hiện đóng của sổ thêm mới
+     * Người tạo: VDThang
+     * Ngày tạo: 26/07/2019
+     * */
+    CloseDialogAdd() {
+        $('#dialog').dialog('close');
+    }
+
+    /**
+     * Hàm thực hiện thêm mới phiếu thu
+     * Người tạo: VDThang
+     * Ngày tạo: 26/07/2019
+     * */
+    SaveRef() {
+        var me = this;
+        var listRow = $('input[property]');
+        var object = {};
+        
+        $.each(listRow, function (index, item) {
+            var propertyName = item.getAttribute('property');
+            var value = $(this).val();
+            object[propertyName] = value;
+        });
+        var mode = $('#mode').val();
+        var method = "POST";
+
+        if (mode === "sửa") {
+            method = "PUT";
+            var refID = $('.selected').data('recordid');
+            object["RefID"] = refID;
+        }
+        $.ajax({
+            method: method,
+            url: '/refs',
+            data: JSON.stringify(object),
+            contentType: "application/json; charset=utf-8",
+            success: function (res) {
+                if (res === 1) {
+                    $('#dialog').dialog('close');
+                    me.loadData();
+                } else {
+                    alert("Chức năng xóa đang bị lỗi! Vui lòng liên hệ MISA");
+                }
+            }
+        });
+    }
+
+    /**
+     * Hàm thực hiện mở dialog thêm mới
+     * Người tạo VDThang
+     * Ngày tạo 26/07/2019
+     * */
+    OpenDialogAdd() {
+        $('#dialog').dialog({
+            modal: true,
+            height: 300,
+            width: 500,
+            resizable: false
+        });
+        $('input').val("");
+        $('#mode').val("thêm");
     }
 
     /**
@@ -54,6 +142,9 @@ class Ref extends Base {
         $('.main-table tbody tr').removeClass('selected');
         $(this).addClass('selected');
         $('button.delete').removeAttr('disabled');
+        $('button.duplicate').removeAttr('disabled');
+        $('button.edit').removeAttr('disabled');
+        $('button.view').removeAttr('disabled');
     }
 
 
@@ -82,7 +173,7 @@ class Ref extends Base {
                 me.loadData();
             },
             error: function (res) {
-                alert("Chức năng xóa đang bị lỗi! Vui lòng liên hệ MISA")
+                alert("Chức năng xóa đang bị lỗi! Vui lòng liên hệ MISA");
             }
         });
     }

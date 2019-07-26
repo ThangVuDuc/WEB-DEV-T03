@@ -129,10 +129,10 @@ C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTrain
 C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\bin\System.Web.Http.xml
 C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\bin\System.Web.Http.WebHost.xml
 C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\WebDevT03.csprojAssemblyReference.cache
+C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\FresherTraining.Migrations.Initial.resources
+C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\WebDevT03.csproj.GenerateResource.cache
 C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\WebDevT03.csproj.CoreCompileInputs.cache
 C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\WebDevT03.csproj.CopyComplete
 C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\FresherTraining.dll
 C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\FresherTraining.pdb
-C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\FresherTraining.Migrations.Initial.resources
-C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\WebDevT03.csproj.GenerateResource.cache
-C:\Users\vdthang\Source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\obj\Debug\WebDevT03.csprojAssemblyReference.cache

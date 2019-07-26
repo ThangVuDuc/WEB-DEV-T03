@@ -25,7 +25,7 @@
         var me = this;
         var data = this.getData();
         var fields = $('th[fieldName]');
-        $('tbody').empty();
+        $('.main-table tbody').empty();
         $.each(data, function (index, item) {
             var rowHTML = $('<tr></tr>').data("recordid", item["RefID"]);
             $.each(fields, function (fieldIndex, fieldItem) {
@@ -50,7 +50,7 @@
                         break;
                 }
                 if (fieldName) {
-                    rowHTML.append('<td class = "{1}">{0}</td>'.format(fieldValue, cls));
+                    rowHTML.append('<td class = "{1} {2}">{0}</td>'.format(fieldValue, cls, fieldName));
                 } else {
                     rowHTML.append('<td class = "{0}"></td>'.format("icon-tick uncheck"));
                 }

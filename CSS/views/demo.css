@@ -47,3 +47,6 @@
     background-color: #00ff90 !important;
 }
 
+#dialog{
+    display: none;
+}

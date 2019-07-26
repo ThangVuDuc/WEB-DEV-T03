@@ -190,6 +190,7 @@
     <Content Include="Scripts\libraries\bootstrap.min.js" />
     <Content Include="Scripts\libraries\colResizable-1.6.min.js" />
     <Content Include="Scripts\libraries\gijgo.min.js" />
+    <Content Include="Scripts\libraries\jquery-1.12.4.js" />
     <Content Include="Scripts\libraries\jquery-1.12.4.min.js" />
     <Content Include="CSS\libraries\bootstrap-theme.css.map" />
     <Content Include="CSS\libraries\bootstrap-theme.min.css.map" />

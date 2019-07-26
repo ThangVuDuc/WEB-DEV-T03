@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="/Contents/images/favicon.ico" rel="shortcut icon" />
+    <link href="/CSS/libraries/jquery-ui.css" rel="stylesheet" />
     <link href="/CSS/views/header.css" rel="stylesheet" />
     <link href="/CSS/views/menu.css" rel="stylesheet" />
     <link href="/CSS/views/style.css" rel="stylesheet" />
@@ -267,19 +268,19 @@
                         </div>
                     </button>
                     <div class="sperator"></div>
-                    <button class="toolbar-item duplicate">
+                    <button class="toolbar-item duplicate" disabled>
                         <div class="icon duplicate">
                         </div>
                         <span>Nhân bản</span>
                     </button>
                     <div class="sperator"></div>
-                    <button class="toolbar-item view">
+                    <button class="toolbar-item view" disabled>
                         <div class="icon view">
                         </div>
                         <span>Xem</span>
                     </button>
                     <div class="sperator"></div>
-                    <button class="toolbar-item edit" title="Ctrl+E">
+                    <button class="toolbar-item edit" title="Ctrl+E" disabled>
                         <div class="icon edit">
                         </div>
                         <span>Sửa</span>
@@ -356,10 +357,46 @@
                     <tbody></tbody>
                 </table>
             </div>
-
+            <div id="dialog" title="Thêm mới phiếu thu">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Ngày</td>
+                            <td><input property="RefDate"/></td>
+                        </tr>
+                        <tr>
+                            <td>Số chứng từ</td>
+                            <td><input property="RefNo"/></td>
+                        </tr>
+                        <tr>
+                            <td>Loại chứng từ</td>
+                            <td><input property="RefType"/></td>
+                        </tr>
+                        <tr>
+                            <td>Tổng tiền</td>
+                            <td><input property="Total"/></td>
+                        </tr>
+                        <tr>
+                            <td>Đối tượng nộp nhận</td>
+                            <td><input property="ContactName"/></td>
+                        </tr>
+                        <tr>
+                            <td>Lý do</td>
+                            <td><input property="Reason"/></td>
+                        </tr>
+                        <tr>
+                            <td><button class="save">Lưu</button></td>
+                            <td><button class="cancel">Hủy</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input id="mode" type="hidden" />
+            </div>
         </div>
     </div>
     <script src="/Scripts/libraries/jquery-3.4.1.js"></script>
+    <script src="/Scripts/libraries/jquery-1.12.4.js"></script>
+    <script src="/Scripts/libraries/jquery-ui.js"></script>
     <script src="/Scripts/common/common.js"></script>
     <script src="/Scripts/common/base.js"></script>
     <script src="/Scripts/views/receipt.js"></script>
