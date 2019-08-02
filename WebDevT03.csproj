@@ -221,14 +221,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201907250224587_Initial.cs" />
-    <Compile Include="Migrations\201907250224587_Initial.Designer.cs">
-      <DependentUpon>201907250224587_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\FresherTrainingContext.cs" />
-    <Compile Include="Models\Ref.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -245,8 +243,23 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907250224587_Initial.resx">
-      <DependentUpon>201907250224587_Initial.cs</DependentUpon>
+    <ProjectReference Include="..\MISA.Entities\MISA.Entities.csproj">
+      <Project>{89dcf823-60db-4353-9025-d368c81f3259}</Project>
+      <Name>MISA.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="MISA.BL\MISA.BL.csproj">
+      <Project>{4cb77d01-0d39-4fd2-8f51-98e090a1be0d}</Project>
+      <Name>MISA.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="MISA.DL\MISA.DL.csproj">
+      <Project>{95629c51-32a8-466a-a16f-caea05c67503}</Project>
+      <Name>MISA.DL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

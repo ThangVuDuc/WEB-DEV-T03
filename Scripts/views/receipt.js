@@ -19,7 +19,7 @@ class Ref extends Base {
         $(document).on('click', 'button.add-new', this.OpenDialogAdd);
         $(document).on('click', 'button.save', this.SaveRef.bind(this));
         $(document).on('click', 'button.cancel', this.CloseDialogAdd);
-        $(document).on('click', 'button.edit', this.OpenDialogEdit);
+        $(document).on('click', 'button.edit', this.OpenDialogEdit.bind(this));
     }
 
     /**
@@ -28,18 +28,46 @@ class Ref extends Base {
      * Ngày tạo: 24/07/2019
      * */
     OpenDialogEdit() {
+        var me = this;
         $("#dialog").dialog({
             title: "Sửa phiếu thu",
             width: 500,
             height: 300
         });
-        var listRow = $('input[property]');
-        $.each(listRow, function (index, item) {
-            var propertyName = item.getAttribute('property');
-            var value = $('.selected .{0}'.format(propertyName)).text();
-            $(item).val(value);
+        var refID = me.GetRowID();
+        $.ajax({
+            method: 'GET',
+            url: '/refs/' + refID,
+            success: function (res) {
+                if (res.Success) {
+                    var listRow = $('input[property]');
+                    $.each(listRow, function (index, item) {
+                        var propertyName = item.getAttribute('property');
+                        var value = res.Data[propertyName];
+                        $(item).val(value);
+                    });
+                } else {
+                    alert(res.Message);
+                }
+            },
+            error: function (res) {
+                alert("Lỗi cấu hình ajax!");
+            }
         });
+
         $('#mode').val("sửa");
+    }
+
+    /**
+     * Hàm thực hiện lấy ID của phiếu thu
+     * Người tạo VDThang
+     * Ngày tạo 01/08/2019
+     * */
+
+    GetRowID() {
+        var refID = $('.selected,.tick').data('recordid');
+        debugger
+        return refID;
     }
 
     /**
@@ -60,7 +88,7 @@ class Ref extends Base {
         var me = this;
         var listRow = $('input[property]');
         var object = {};
-        
+
         $.each(listRow, function (index, item) {
             var propertyName = item.getAttribute('property');
             var value = $(this).val();
@@ -100,7 +128,8 @@ class Ref extends Base {
             modal: true,
             height: 300,
             width: 500,
-            resizable: false
+            resizable: false,
+            dialogClass: "dialog-data"
         });
         $('input').val("");
         $('#mode').val("thêm");

@@ -1,0 +1,14 @@
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\bin\Debug\MISA.Entities.dll.config
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\bin\Debug\MISA.Entities.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\bin\Debug\MISA.Entities.pdb
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\bin\Debug\EntityFramework.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\bin\Debug\EntityFramework.xml
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\obj\Debug\MISA.Entities.csprojAssemblyReference.cache
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\obj\Debug\MISA.Entities.Initial.resources
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\obj\Debug\MISA.Entities.csproj.GenerateResource.cache
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\obj\Debug\MISA.Entities.csproj.CoreCompileInputs.cache
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\obj\Debug\MISA.Entities.csproj.CopyComplete
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\obj\Debug\MISA.Entities.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\MISA.Entities\obj\Debug\MISA.Entities.pdb

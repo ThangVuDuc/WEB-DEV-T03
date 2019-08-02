@@ -1,0 +1,15 @@
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\MISA.DL.dll.config
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\MISA.DL.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\MISA.DL.pdb
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\EntityFramework.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\MISA.Entities.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\MISA.Entities.pdb
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\MISA.Entities.dll.config
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\EntityFramework.xml
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\obj\Debug\MISA.DL.csprojAssemblyReference.cache
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\obj\Debug\MISA.DL.csproj.CoreCompileInputs.cache
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\obj\Debug\MISA.DL.csproj.CopyComplete
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\obj\Debug\MISA.DL.dll
+C:\Users\vdthang\source\Workspaces\MISA.Training\WebDevT03_API_AJAX\FresherTraining\MISA.DL\obj\Debug\MISA.DL.pdb

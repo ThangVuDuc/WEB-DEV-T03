@@ -11,7 +11,11 @@
             url: '/refs',
             async: false,
             success: function (res) {
-                fakeData = res;
+                if (res.Success) {
+                    fakeData = res.Data;
+                } else {
+                    alert(res.Message);
+                }
             },
             error: function (res) {
                 alert("Dịch vụ đang có lỗi. Vui lòng liên hệ MISA");
